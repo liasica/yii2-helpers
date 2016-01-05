@@ -44,3 +44,15 @@ $curl = new Curl($url);
 $curl->setData($data)->setCerts($certs);
 var_dump($curl->postSSL());
 ```
+
+##Unicode Usage
+#1.encode
+```php
+$unicode = new Unicode(null, $unicodeStr);
+var_dump($unicode->encode());
+```
+#2.decode
+```php
+$unicode = new Unicode($encodeUnicodeStr);
+var_dump($unicode->decode());
+```
