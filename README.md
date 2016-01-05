@@ -41,7 +41,6 @@ $certs = [
     CURLOPT_SSLKEY  => 'CURLOPT_SSLKEY.pem',
 ];
 $curl = new Curl($url);
-$curl->setData($data);
-$curl->setCerts($certs);
+$curl->setData($data)->setCerts($certs);
 var_dump($curl->postSSL());
 ```
