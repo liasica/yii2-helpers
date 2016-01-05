@@ -85,13 +85,13 @@ class Curl
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
     // 判断证书是否存在
-    if (count($this->certs) < 1 || !isset($this->certs[CURLOPT_SSLCERT]))
+    if (count($this->certs) < 1 || !isset($this->certs[CURLOPT_SSLCERT]) || !is_file($this->certs[CURLOPT_SSLCERT]))
     {
       return false;
     }
     //以下两种方式需选择一种
     //第一种方法，cert 与 key 分别属于两个.pem文件
-    if (count($this->certs) > 1)
+    if (count($this->certs) > 1 && is_file($this->certs[CURLOPT_SSLKEY]))
     {
       //默认格式为PEM，可以注释
       curl_setopt($ch, CURLOPT_SSLCERTTYPE, 'PEM');
@@ -104,6 +104,10 @@ class Curl
     {
       //第二种方式，两个文件合成一个.pem文件
       curl_setopt($ch, CURLOPT_SSLCERT, $this->certs[CURLOPT_SSLCERT]);
+    }
+    else
+    {
+      return false;
     }
     if (count($this->aHeader) >= 1)
     {
