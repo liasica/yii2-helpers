@@ -37,8 +37,8 @@ var_dump($curl->Post());
 # 3.curl_post_ssl
 ```php
 $certs = [
-CURLOPT_SSLCERT => 'CURLOPT_SSLCERT.pem',
-CURLOPT_SSLKEY => 'CURLOPT_SSLKEY.pem',
+    CURLOPT_SSLCERT => 'CURLOPT_SSLCERT.pem',
+    CURLOPT_SSLKEY  => 'CURLOPT_SSLKEY.pem',
 ];
 $curl = new Curl($url);
 $curl->setData($data);
