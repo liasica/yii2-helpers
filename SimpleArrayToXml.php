@@ -8,6 +8,8 @@
 namespace liasica\helpers;
 class SimpleArrayToXml
 {
+  private $arr;
+
   /**
    * 数组转为简单XML
    * array convert to simple xml
@@ -17,6 +19,12 @@ class SimpleArrayToXml
    */
   public function __construct($arr)
   {
+    $this->arr = $arr;
+  }
+
+  public function buildXML()
+  {
+    $arr = $this->arr;
     $xml = "<xml>";
     foreach ($arr as $key => $val)
     {
