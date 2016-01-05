@@ -123,6 +123,7 @@ class Curl
     if ($data)
     {
       curl_close($ch);
+      $output['data'] = simplexml_load_string($data, 'SimpleXMLElement', LIBXML_NOCDATA);
 
       return $output;
     }
