@@ -12,7 +12,7 @@
 
 ## ArrayTOXml Usage
 ```php
-`$xml = new ArrayToXML();
+$xml = new ArrayToXML();
 print $xml->buildXML($array);
 ```
 
