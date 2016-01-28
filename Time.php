@@ -3,12 +3,13 @@
  * Author: liasica
  * CreateTime: 16/1/28 15:52
  * Filename: Time.php
- * PhpStorm: bsb
+ * PhpStorm: yii2-helpers
  */
 namespace liasica\helpers;
 
 use Yii;
 use yii\base\ErrorException;
+use yii\base\InvalidConfigException;
 
 class Time
 {
@@ -19,6 +20,7 @@ class Time
    * @param null $time
    *
    * @return mixed
+   * @throws \yii\base\ErrorException
    */
   public function microtime_format($tag, $time = null)
   {
@@ -29,7 +31,7 @@ class Time
     }
     catch (\Exception $e)
     {
-      new ErrorException($e->getMessage(), $e->getCode());
+      throw new ErrorException($e->getMessage(), $e->getCode());
     }
     $date = date($tag, $usec);
 
