@@ -81,3 +81,15 @@ or
 $Url = Url::setUri($uri);
 var_dump($Url->realurl());
 ```
+
+##Time
+#1.Get formated microtime
+```php
+$Time = new Time();
+var_dump($Time->microtime_format);
+```
+#2. Get timestamp of microtime
+```php
+$Time = new Time();
+var_dump($Time->microtime_float());
+```
