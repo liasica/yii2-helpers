@@ -22,6 +22,9 @@ class SimpleArrayToXml
     $this->arr = $arr;
   }
 
+  /**
+   * @return string
+   */
   public function buildXML()
   {
     $arr = $this->arr;

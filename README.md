@@ -56,3 +56,28 @@ var_dump($unicode->encode());
 $unicode = new Unicode($encodeUnicodeStr);
 var_dump($unicode->decode());
 ```
+
+##Radom Usage
+#1.Generate an radom str
+```php
+$radom = new Radom();
+var_dump($radom->RadomChars(32));
+```
+#2.Get lottery
+```php
+$proArr = [1 => 1, 2 => 10, 3 => 40];
+$radom = new Radom();
+var_dump($radom->lottery($proArr));
+```
+
+##Url
+#1.Get real url
+```php
+$Url = new Url($uri);
+var_dump($Url->realurl());
+```
+or
+```php
+$Url = Url::setUri($uri);
+var_dump($Url->realurl());
+```

@@ -190,4 +190,5 @@ class Curl
 
     return $return;
   }
+
 }
