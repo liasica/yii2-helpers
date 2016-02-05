@@ -14,6 +14,11 @@ class Curl
   private $aHeader;
   private $second = 30;
 
+  /**
+   * Curl constructor.
+   *
+   * @param $url
+   */
   public function __construct($url)
   {
     $this->url = $url;
