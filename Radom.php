@@ -11,11 +11,11 @@ class Radom
   /**
    * 生成随机字符串只包含大小写字母以及数字
    *
-   * @param       $length 长度
-   * @param bool  $upper  包含大写字母
-   * @param bool  $lower  包含小写字母
-   * @param null  $symbol 其他符号
-   * @param bool  $repeat 是否重复
+   * @param string $length 长度
+   * @param bool   $upper  包含大写字母
+   * @param bool   $lower  包含小写字母
+   * @param null   $symbol 其他符号
+   * @param bool   $repeat 是否重复
    *
    * @return null|string
    */
@@ -28,7 +28,7 @@ class Radom
     $lower == true && $strPol .= $letters;
     $symbol != null && $strPol .= $symbol;
     $str_arr = str_split($strPol);
-    $max     = count($str_arr);
+    $max     = count($str_arr) - 1;
     $str     = null;
     for ($i = 0; $i < $length; $i++)
     {
