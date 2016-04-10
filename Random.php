@@ -2,11 +2,11 @@
 /**
  * Author: liasica
  * CreateTime: 16/1/28 11:10
- * Filename: Radom.php
+ * Filename: Random.php
  * PhpStorm: LiasicaAPI
  */
 namespace liasica\helpers;
-class Radom
+class Random
 {
   /**
    * 生成随机字符串只包含大小写字母以及数字
@@ -19,7 +19,7 @@ class Radom
    *
    * @return null|string
    */
-  public function RadomChars($length, $upper = true, $lower = true, $symbol = null, $repeat = true)
+  public function RandomChars($length, $upper = true, $lower = true, $symbol = null, $repeat = true)
   {
     $str     = null;
     $strPol  = '0123456789';
@@ -32,11 +32,11 @@ class Radom
     $str     = null;
     for ($i = 0; $i < $length; $i++)
     {
-      $radom = mt_rand(0, $max);
-      $str .= $str_arr[$radom];
+      $random = mt_rand(0, $max);
+      $str .= $str_arr[$random];
       if (!$repeat)
       {
-        unset($str_arr[$radom]);
+        unset($str_arr[$random]);
       }
     }
 
