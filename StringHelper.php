@@ -5,6 +5,7 @@
  * Filename: StringHelper.php
  * PhpStorm: mipay
  */
+
 namespace liasica\helpers;
 
 class StringHelper
@@ -17,7 +18,7 @@ class StringHelper
      * @param integer $repeat      重复次数
      * @return string
      */
-    public static function strReplace($string, $replacement, $start, $length = null, $repeat = 0):string
+    public static function strReplace($string, $replacement, $start, $length = null, $repeat = 0): string
     {
         $len = mb_strlen($string, 'utf8');
         if ($repeat) {
@@ -37,5 +38,20 @@ class StringHelper
         $firstStr = mb_substr($user_name, 0, 1, 'utf-8');
         $lastStr  = mb_substr($user_name, -1, 1, 'utf-8');
         return $strlen == 2 ? $firstStr . str_repeat('*', mb_strlen($user_name, 'utf-8') - 1) : $firstStr . str_repeat("*", $strlen - 2) . $lastStr;
+    }
+
+    /**
+     * 截取一定长度的字符串
+     * @param        $text
+     * @param        $length
+     * @param string $replacement
+     * @return string
+     */
+    public static function subtext($text, $length, $replacement = '...')
+    {
+        if (mb_strlen($text, 'utf8') > $length) {
+            return mb_substr($text, 0, $length - mb_strlen($replacement), 'utf8') . $replacement;
+        }
+        return $text;
     }
 }
